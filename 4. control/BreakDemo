@@ -1,0 +1,29 @@
+package control;
+
+import java.util.Scanner;
+
+public class BreakDemo {
+	public static void main(String[] args) {
+		// break
+		// 반복문 탈출, for문, while문 안에서 사용
+		
+		Scanner sc = new Scanner(System.in);
+		// 내가 입력한 주사위 숫자와 동일한 숫자가 나오면 탈출
+		for( ; ; ) { // 조건없으면 무한루프
+			System.out.print("숫자를 입력하세요(1~6) : ");
+			int myNumber = sc.nextInt();
+			
+			int randomNumber = (int) (Math.random()*6 + 1);
+			
+			System.out.println("내가 입력한 숫자 :" + myNumber);
+			System.out.println("랜덤 숫자 :" + randomNumber);
+			System.out.println();
+			
+			if(myNumber == randomNumber) {
+				System.out.println("탈출!");
+				break;
+			}
+		}
+		
+	}
+}
